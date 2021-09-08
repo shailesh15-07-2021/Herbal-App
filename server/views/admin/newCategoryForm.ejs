@@ -1,0 +1,98 @@
+<%- include("../partials/header")%>
+    <%- include("../partials/dashboard")%>
+
+
+
+
+
+
+
+
+
+
+
+        <main class="main-content position-relative max-height-vh-100 h-100  mt-1 border-radius-lg ">
+
+
+
+
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+                navbar-scroll="true">
+                <div class="container-fluid py-1 px-3">
+                 
+                    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                       
+                      
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+
+
+
+
+
+            <h3 class="text-center font-weight-bolder text-info text-gradient">
+                Add a New Category
+            </h3>
+            <hr>
+
+            <form class="mt-2 mx-2" action="/admin/addcategory" method="POST" enctype="multipart/form-data">
+
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="title" id="title" class="form-control"
+                                placeholder="Enter Category Name" required/>
+                            <label class="form-label" for="title">Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="file" name="image" id="image" value="" class="form-control"
+                                placeholder="Enter Image Link" required multiple />
+                            <label class="form-label" for="image">Image</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="dsc" id="dsc" class="form-control"
+                                placeholder="Enter Category Description" required />
+                            <label class="form-label" for="dsc">Description</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <select name="status" class="form-control">
+                              <option value=" ">Select Status</option>
+                              <option value="Active">Active</option>
+                              <option value="In-Active">In-Active</option>
+                            </select>
+                            <label class="form-label" for="state"> Status: </label>
+                          </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-check d-flex justify-content-center block mb-4">
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-block mb-4">Add Category</button>
+                </div>
+
+            </form>
+        </main>
+
+        <%- include("../partials/footer")%>

@@ -1,0 +1,147 @@
+<%- include("../partials/header")%>
+    <%- include("../partials/dashboard")%>
+        <main class="
+    main-content
+    position-relative
+    max-height-vh-100
+    h-100
+    p-2
+    border-radius-lg
+  " style="width: 80vw; margin-left: 150px; box-shadow: 0 0 10px">
+  <div class="container d-flex justify-content-end" style="  width: 70vw;">
+    <a href="/admin/order" class="btn btn-success">Go Back</a>
+  </div>
+            <h3 class="text-center font-weight-bolder text-info text-gradient">
+                Order Details
+            </h3>
+            <br />
+
+            <form class="mt-2 mx-2" action="/admin/">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <h4 style="
+          text-align: center;
+          text-decoration: #79ecf7 underline;
+          padding: 4px;
+          font-weight: bolder;
+          text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+            0px -4px 10px rgba(255, 255, 255, 0.3);
+        ">
+                        User Details
+                    </h4>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <p><strong> Name:</strong></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <p><strong>Email:</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <p><strong>Contact:</strong></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <p>
+                                <strong>Address:</strong>
+                                <%= order.shippingAddress.address %>, <%= order.shippingAddress.city %>, <%=
+                                            order.shippingAddress.stateName %>, <%= order.shippingAddress.postalcode %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row mb-4">
+                    <h4 style="
+          text-align: center;
+          text-decoration: #79ecf7 underline;
+          padding: 4px;
+          font-weight: bolder;
+          text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+            0px -4px 10px rgba(255, 255, 255, 0.3);
+        ">
+                        Product Details
+                    </h4>
+
+
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sr. No.</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <% order.orderItems.map((item)=>{ %>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><%= item.name %></td>
+                                    <td><%= item.qty %></td>
+                                    <td><%= item.price %></td>
+                                </tr>
+                             <% }) %>
+                        
+                        </tbody>
+                      </table>
+                </div>
+             
+
+                <hr />
+                <!-- Text input -->
+                <div class="row mb-4">
+                    <h4 style=" text-align: center; text-decoration: #79ecf7 underline; padding: 4px; font-weight: bolder;text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3)">
+                        Payment Details
+                    </h4>
+                    <div class="col">
+                        <div class="form-outline">
+                            <p>
+                                <strong>Shipping Price:</strong>
+                                <%= order.shippingPrice %> ₹
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <p>
+                                <strong>Total Price:</strong>
+                                <%= order.totalPrice %> ₹
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <p>
+                                <strong>Payment Status:</strong>
+                                <%= order.isPaid %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <p>
+                                <strong>Delivery Status:</strong>
+                                <%= order.isDeliverd %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <%- include("../partials/footer")%>

@@ -1,0 +1,150 @@
+.prduct_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.product_search_from input {
+  margin: 5px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.prduct_search p {
+  margin: 10px;
+  font-size: 18px;
+}
+.filterHeader {
+  background-color: #4bbf73;
+  color: #fff !important;
+  padding: 3px;
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  color: #fff;
+  font-size: 15px;
+}
+
+.relatedProduct {
+  margin-bottom: 10rem !important;
+  /* background-color: #f3f3f3; */
+  border-radius: 10px;
+}
+
+.product-spad {
+  margin-top: 35px;
+  padding-top: 4px;
+}
+.activetintcolor {
+  border-bottom: 1px solid #fff;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.productCategoriesFilter {
+  height: 350px !important;
+  overflow: auto;
+  background-color: #f3f3f3;
+}
+.product__item {
+  margin-bottom: 0;
+}
+.decoration_none {
+  text-decoration: none;
+}
+
+.shoping__cart__table img {
+  width: 100%;
+}
+.shoping__cart__table table td {
+  vertical-align: middle;
+}
+.checkoutBG {
+  background: #f3f3f3;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.checkoutBG input {
+  background-color: #fff;
+}
+
+.sideNavContent.row {
+  margin-top: 35px;
+}
+
+.header__logo a h3:hover {
+  color: rgb(71, 149, 255);
+}
+
+.nav-item .dropdown a:hover {
+  color: rgb(71, 149, 255);
+}
+
+.fa-shopping-bag:hover {
+  color: rgb(71, 149, 255);
+}
+
+.navbar-brand a {
+  color: cornflowerblue;
+  list-style: none;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.navbar-header-link {
+  color: rgb(0 74 68);
+  font-size: 17px;
+  padding: 5px 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fa-search {
+  font-size: 18px;
+}
+.fa-trash {
+  font-size: 18px;
+}
+
+.hero {
+  padding: 0;
+  padding-bottom: 50px;
+}
+
+.hero__cart {
+  padding: 5px;
+}
+
+.breadcrumb__text {
+  text-align: center;
+  width: 75vw;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.breadcrumb__text h2 {
+  font-size: 22px;
+}
+
+.shoping__cart__table table tbody tr {
+  text-align: center;
+  align-items: center;
+}
+.featured__item {
+  text-align: center !important;
+  align-items: center !important;
+}
+.profileTable {
+  overflow: hidden !important;
+}
+.filterHeader {
+  font-size: 22px;
+}

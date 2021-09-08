@@ -1,0 +1,77 @@
+<%- include("../partials/header")%>
+    <%- include("../partials/vendorDashboard")%>
+
+        <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+                navbar-scroll="true">
+               
+            </nav>
+            <!-- End Navbar -->
+
+            <h3 class="text-center font-weight-bolder text-info text-gradient">
+                Add a New Sub-Category
+            </h3>
+            <hr />
+
+            <form class="mt-2 mx-2" action="/vendor//addsubcategory" method="POST" enctype="multipart/form-data">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="form-outline">
+                    <select name="categoryObjectID" class="form-control">
+                        <option value=" ">Select Category</option>
+                        <% for (let category of categories){ %>
+                            <option value='<%= category._id %>'>
+                                <%= category.title %>
+                            </option>
+                            <% } %>
+                    </select>
+                    <label class="form-label" for="categoryObjectID"> Category Name: </label>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="title" id="title" class="form-control"
+                                placeholder="Enter sub category Name" required/>
+                            <label class="form-label" for="title">Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="file" name="image" id="image" value="" class="form-control"
+                                placeholder="Enter Image Link" required multiple />
+                            <label class="form-label" for="image">Image:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="desc" id="desc" class="form-control"
+                                placeholder="Enter Category Description" required />
+                            <label class="form-label" for="desc">Description</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <select name="status" class="form-control">
+                                <option value=" ">Select Status</option>
+                                <option value="Active">Active</option>
+                                <option value="In-Active">In-Active</option>
+                            </select>
+                            <label class="form-label" for="state"> Status: </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-check d-flex justify-content-center block mb-4">
+                    <button type="submit" class="btn btn-rounded btn-lg btn-primary btn-block mb-4">
+                        Add Sub-Category
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <%- include("../partials/footer")%>

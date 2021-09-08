@@ -1,0 +1,192 @@
+<%- include("../partials/header")%>
+    <%- include("../partials/dashboard")%>
+
+
+
+
+
+
+
+
+
+
+
+        <main class="main-content position-relative max-height-vh-100 h-100  mt-1 border-radius-lg ">
+
+
+
+
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+                navbar-scroll="true">
+                <div class="container-fluid py-1 px-3">
+                 
+                    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                       
+                      
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+
+
+
+
+
+            <h3 class="text-center font-weight-bolder text-info text-gradient">
+                Add a New Product
+            </h3>
+            <hr>
+
+            <form class="mt-2 mx-2" action="/admin/addproduct" method="POST" enctype="multipart/form-data">
+
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+
+
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <select name="categoryObjectID" id="cate" onchange="subCate()" class="form-control">
+                                <option value=" ">Select Category</option>
+                                <% for (let category of categories){ %>
+                                    <option value='<%= category._id %>'>
+                                        <%= category.title %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                            <label class="form-label" for="categoryObjectID"> Category Name: </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <select name="SubCategoryObjectID" class="form-control" id="subcates">
+                               
+                               
+                            </select>
+                            <label class="form-label" for="SubCategoryObjectID"> Category Name: </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="name" id="name" class="form-control"
+                                placeholder="Enter Your Full Name" required/>
+                            <label class="form-label" for="name">Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="file" name="image" id="image" value="" class="form-control"
+                                placeholder="Enter Image Link" required multiple />
+                            <label class="form-label" for="image">Image:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="price" id="price" class="form-control" required placeholder="Enter Price" />
+                            <label class="form-label" for="price">Price ₹</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="discountPrice" id="discountPrice" class="form-control"
+                                placeholder="Enter discount Price" />
+                            <label class="form-label" for="discountPrice">Discount Price</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="size" id="size" class="form-control" placeholder="Enter size" />
+                            <label class="form-label" for="size">Size</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="qty" id="qty" class="form-control" placeholder="Enter Quantity" />
+                            <label class="form-label" for="qty">Quantity</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="des" id="des" class="form-control"
+                                placeholder="Enter Product Description" required/>
+                            <label class="form-label" for="des">Description</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="subDes" id="subDes" class="form-control"
+                                placeholder="Enter Product Sub-Description" />
+                            <label class="form-label" for="subDes">Sub-Description</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-check d-flex justify-content-center block mb-4">
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-block mb-4">Add Product</button>
+                </div>
+
+            </form>
+        </main>
+<script>
+    function subCate() {
+            var id = document.getElementById("cate").value;
+            console.log(id);
+            $.ajax({
+                url: `http://localhost:5000/admin/subcat/${id}`,
+                type: 'GET',
+                contentType: "application/json",
+                success:function(response){  
+                if(response.msg=='success'){  
+                     for (let category of categories){ 
+                    var a =  for (let category of categories){ 
+                                    '<option value='+category._id+'>'
+                                        + category.title+
+                                    '</option>'
+                         } 
+                    document.getElementById('subcates').innerHTML=a;
+                }else{  
+                    alert('Category Not Exit');  
+                }  
+                },  
+                error:function(response){  
+                    alert('server error occured')  
+                }  
+            });
+
+    }
+</script>
+
+        <%- include("../partials/footer")%>

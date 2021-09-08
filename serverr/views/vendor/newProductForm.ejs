@@ -1,0 +1,128 @@
+<%- include("../partials/header")%>
+    <%- include("../partials/vendorDashboard")%>
+
+
+
+
+
+
+
+
+
+
+
+        <main class="main-content position-relative max-height-vh-100 h-100  mt-1 border-radius-lg ">
+
+
+
+
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+                navbar-scroll="true">
+            
+            </nav>
+            <!-- End Navbar -->
+
+
+
+
+
+            <h3 class="text-center font-weight-bolder text-info text-gradient">
+                Add a New Product
+            </h3>
+            <hr>
+
+            <form class="mt-2 mx-2" action="/vendor/addproduct" method="POST" enctype="multipart/form-data">
+
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="name" id="name" class="form-control"
+                                placeholder="Enter Your Full Name" required />
+                            <label class="form-label" for="name">Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="file" name="image" id="image" value="" class="form-control"
+                                placeholder="Enter Image Link" required multiple />
+                            <label class="form-label" for="image">Image:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="price" id="price" class="form-control" required placeholder="Enter Price" />
+                            <label class="form-label" for="price">Price</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="discountPrice" id="discountPrice" class="form-control"
+                                placeholder="Enter discount Price" required/>
+                            <label class="form-label" for="discountPrice">Discount Price</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="size" id="size" class="form-control" placeholder="Enter size" />
+                            <label class="form-label" for="size">Size</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="qty" id="qty" class="form-control" placeholder="Enter Quantity" />
+                            <label class="form-label" for="qty">Quantity</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Text input -->
+                <div class="row mb-4">
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="des" id="des" class="form-control"
+                                placeholder="Enter Product Description" required />
+                            <label class="form-label" for="des">Description</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" name="subDes" id="subDes" class="form-control"
+                                placeholder="Enter Product Sub-Description" />
+                            <label class="form-label" for="subDes">Sub-Description</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-check d-flex justify-content-center block mb-4">
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-block mb-4">Add Product</button>
+                </div>
+
+            </form>
+        </main>
+
+        <%- include("../partials/footer")%>

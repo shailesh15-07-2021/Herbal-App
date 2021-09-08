@@ -1,0 +1,71 @@
+.sticky-top {
+  padding: 15px 0px;
+  height: auto !important ;
+}
+
+.HeaderLogo {
+  color: #fff !important;
+  font-size: 27px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s linear;
+}
+.HeaderLogo:hover {
+  transform: scale(1.1);
+}
+
+.navbarItemLink {
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.navbarItemLink:hover {
+  transform: scale(1.1);
+}
+
+.navbarItemCategories {
+  background-color: #4bbf73 !important;
+  margin: 0px 0px !important;
+  z-index: 1000;
+}
+
+.navbarItemCategories a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+.navbarItemCategories a:hover {
+  transform: scale(1.1);
+}
+.navbarItemCategoriesUser {
+  background-color: #4bbf73 !important;
+  margin: 0px 0px !important;
+}
+
+.navbarItemCategoriesUser a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+.navbarItemCategoriesUser a:hover {
+  transform: scale(1.1);
+}
+.fa-shopping-bag {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .sticky-top {
+    height: auto;
+    padding: 0.1rem 0.1rem;
+  }
+  .navbarItemCategoriesLink {
+    align-items: left;
+    margin-left: 0 !important;
+  }
+  .navdiv {
+    padding-left: 12px;
+  }
+}
